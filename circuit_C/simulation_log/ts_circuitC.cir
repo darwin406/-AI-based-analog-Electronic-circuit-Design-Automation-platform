@@ -1,0 +1,40 @@
+
+****Circuit C for settling time****
+
+* SIN(offset amplitude frequency)
+V0 power GND 2
+* V1 Vin1 GND SIN(0.978 0.01 1000k)
+* Vin1: V-, Vin2: V+
+* bind Vin1 and output
+V2 Vin2 GND PULSE(0.5 1 1p 1p 1p 1u 1u)
+* V1 output GND 1 
+
+*M1 Drain Gate Source Body
+M1 M1G M1G power power PMOS_MODEL l=150e-9 w=1.8000000000000002e-07
+M2 M2D M1G power power PMOS_MODEL l=150e-9 w=1.8000000000000002e-07
+
+* M3 M1G Vin1 M3S M3S NMOS_MODEL l=150e-9 w=5.588325445353986e-07
+M3 M1G output M3S M3S NMOS_MODEL l=150e-9 w=5.588325445353986e-07
+
+M4 M2D Vin2 M3S M3S NMOS_MODEL l=150e-9 w=5.588325445353986e-07
+M5 output M2D power power PMOS_MODEL l=150e-9 w=1.0885876393318177e-06
+M6 M6D M6D GND GND NMOS_MODEL l=150e-9 w=1.8000000000000002e-07
+M7 M3S M6D GND GND NMOS_MODEL l=150e-9 w=1.8000000000000002e-07
+M8 output M6D GND GND NMOS_MODEL l=150e-9 w=1.8000000000000002e-07
+
+R1 power M6D 20k
+R2 C1R2 output 20k
+C1 M2D C1R2 0.5p
+C2 output GND 1p
+
+.model NMOS_MODEL NMOS level=54 version=4.7
+.model PMOS_MODEL PMOS level=54 version=4.7
+
+
+***********Analysis**********
+.control
+tran 0.1n 0.5u
+plot v(output) v(Vin2)
+wrdata simulation_log/settling_time_data.txt v(output)
+.endc
+.end
