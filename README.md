@@ -1,2 +1,2 @@
-# AI-based-analog-Electronic-circuit-Design-Automation-platform
+# AI-based-analog-EDA-platform
  This is software that automatically optimizes transistor size using reinforcement learning.
