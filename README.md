@@ -28,7 +28,13 @@ $$ FOM = \frac{GAIN(dB)}{70(dB)} + \frac{\log_{10}(GBW)}{\log_{10}(1GHz)} - \fra
 *PM: Phase Margin* <br/>
 *GBW: Gain Bandwidth*
 
-## Environment setting
+## Environment setting 
+Observation(state) space: **w** = (w₁, w₂, w₃, w₄), wᵢ ∈ [0, 1] for all i ∈ {1, 2, 3, 4} <br/>
+Minimum transistor width : 180nm <br/>
+Maximum transistor width : 2250nm <br/>
+
+Normalization = (x - xmin)/(xmax - xmin)
+
 
 
 
