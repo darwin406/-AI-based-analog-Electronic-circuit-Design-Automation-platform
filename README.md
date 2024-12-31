@@ -15,15 +15,23 @@
  We experimented with a total of three simple circuits and found the optimal FOM and state. <br/>
  The code we've uploaded to GitHub is for one of the three circuits, which we'll call circuit C. <br/>
  Circuit C is shown in the photo below. <br/>
- 
+ ![circuit_C](https://github.com/user-attachments/assets/696361a2-0978-416c-8579-64661d5dfd8a) <br/>
+ In this circuit, W<sub>1</sub>,W<sub>2</sub>,W<sub>3</sub>,W<sub>4</sub> are optimized using reinforcement learning. <br/>
+
+## FOM
+FOM was set and reinforcement learning was performed to maximize or minimize the FOM according to transistor sizes. <br/>
+In circuit C, the optimization is to maximize the FOM. <br/>
+We set up the FOM as follows. <br/>
+
+$$ FOM = \frac{GAIN(dB)}{70(dB)} + \frac{\log_{10}(GBW)}{\log_{10}(1GHz)} - \frac{\log_{10}(Power)}{\log_{10}(1mW)}- (w1 + w2 + w3 + w4) * 180 * 500- \frac{\log_{10}(settling \ time)}{\log_{10}(1ns)} \quad \text{subject to } PM \geq 60^\circ $$
 
 
-## DDPG (Action scale = 0.1)
+## Algorithm 1: DDPG (Action scale = 0.1)
  It is almost identical to the commonly known DDPG algorithm. However, it does not use a target network. <br/>
  
 
 
-## DNN_OPT (Action scale = 1)
+## Algorithm 2: DNN_OPT (Action scale = 1)
  
 
  
