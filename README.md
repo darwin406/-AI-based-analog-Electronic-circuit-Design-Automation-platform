@@ -25,6 +25,12 @@ We set up the FOM as follows. <br/>
 
 $$ FOM = \frac{GAIN(dB)}{70(dB)} + \frac{\log_{10}(GBW)}{\log_{10}(1GHz)} - \frac{\log_{10}(Power)}{\log_{10}(1mW)}- (w1 + w2 + w3 + w4) * 180 * 500- \frac{\log_{10}(settling \ time)}{\log_{10}(1ns)} \quad \text{subject to } PM \geq 60^\circ $$
 
+*PM: Phase Margin* <br/>
+*GBW: Gain Bandwidth*
+
+## Environment setting
+
+
 
 ## Algorithm 1: DDPG (Action scale = 0.1)
  It is almost identical to the commonly known DDPG algorithm. However, it does not use a target network. <br/>
