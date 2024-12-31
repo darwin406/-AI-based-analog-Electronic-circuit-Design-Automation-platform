@@ -11,6 +11,13 @@
  By improving and modifying the methods proposed in DDPG(https://arxiv.org/pdf/1509.02971) and DNN_OPT(https://arxiv.org/abs/2110.00211) papers, we succeeded in optimizing the transistor size. <br/>
  <br/>
 
+## Circuit
+ We experimented with a total of three simple circuits and found the optimal FOM and state. <br/>
+ The code we've uploaded to GitHub is for one of the three circuits, which we'll call circuit C. <br/>
+ Circuit C is shown in the photo below. <br/>
+ 
+
+
 ## DDPG (Action scale = 0.1)
  It is almost identical to the commonly known DDPG algorithm. However, it does not use a target network. <br/>
  
