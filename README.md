@@ -29,14 +29,18 @@ $$ FOM = \frac{GAIN(dB)}{70(dB)} + \frac{\log_{10}(GBW)}{\log_{10}(1GHz)} - \fra
 *GBW: Gain Bandwidth*
 
 ## Environment setting 
-Observation(state) space: **w** = (w₁, w₂, w₃, w₄), wᵢ ∈ [0, 1] for all i ∈ {1, 2, 3, 4} <br/>
+Normalization = (x - x<sub>min</sub>)/(x<sub>max</sub> - x<sub>min</sub>) <br/>
+*x : Actual transistor width* <br/>
 Minimum transistor width : 180nm <br/>
 Maximum transistor width : 2250nm <br/>
-
-Normalization = (x - xmin)/(xmax - xmin)
-
-
-
+<br/>
+Observation(state) space: **W** = (w₁, w₂, w₃, w₄), wᵢ ∈ [0, 1] for all i ∈ {1, 2, 3, 4} <br/>
+<br/>
+**Reinforcement learning is done in observation space by normalizing the actual transistor width size.** <br/>
+<br/>
+Action space: **A** = (Δw₁, Δw₂, Δw₃, Δw₄) <br/>
+In Algorithm 1, Δwᵢ ∈ [-0.1,0.1] for all i ∈ {1, 2, 3, 4} <br/>
+In Algorithm 2, Δwᵢ ∈ [-1,1] for all i ∈ {1, 2, 3, 4} <br/>
 
 ## Algorithm 1: DDPG (Action scale = 0.1)
  It is almost identical to the commonly known DDPG algorithm. However, it does not use a target network. <br/>
