@@ -49,7 +49,8 @@ In Algorithm 2, Δwᵢ ∈ [-1,1] for all i ∈ {1, 2, 3, 4} <br/>
 
 ## Algorithm 2: DNN_OPT (Action scale = 1)
  This is the DNN OPT-based reinforcement learning algorithm we implemented. <br/>
+ ![dnn_opt_fix](https://github.com/user-attachments/assets/8d824afb-faf8-47fe-a874-5bc934f7dbb7) <br/>
+ The formulas involved are as follows. <br/>
  
-
  
  
