@@ -44,10 +44,11 @@ In Algorithm 2, Δwᵢ ∈ [-1,1] for all i ∈ {1, 2, 3, 4} <br/>
 
 ## Algorithm 1: DDPG (Action scale = 0.1)
  It is almost identical to the commonly known DDPG algorithm. However, it does not use a target network. <br/>
- 
-
+ This is the DDPG-based reinforcement learning algorithm we implemented. <br/>
+ ![ddpg_algoritm](https://github.com/user-attachments/assets/e9cf110a-a866-43be-ada2-4d9ba8e21f04)
 
 ## Algorithm 2: DNN_OPT (Action scale = 1)
+ This is the DNN OPT-based reinforcement learning algorithm we implemented. <br/>
  
 
  
