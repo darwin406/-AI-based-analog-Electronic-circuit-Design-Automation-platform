@@ -54,6 +54,31 @@ In Algorithm 2, Δwᵢ ∈ [-1,1] for all i ∈ {1, 2, 3, 4} <br/>
  This algorithm uses target networks. <br/>
  There are two target networks: Actor Target Network and Critic Target Network. <br/>
 ## Algorithm 3: DNN_OPT (Action scale = 1)
+### How DNN OPT RL works
+This algorithm utilizes pseudo-sampling and elite sample generation. <br/>
+- Pseudo Sampling <br/>
+  It is a technique used to generate additional training data from a limited dataset. Unlike traditional methods, <br/>
+  which rely solely on the states and actions explored by the actual actor, <br/>
+  Pseudo Sampling expands the dataset through the following process: <br/>
+  <br/>
+  1. Randomly select two states from memory.  <br/>
+  2. Define the first selected state as the **current state**.  <br/>
+  3. Define the second selected state as the **next state**.  <br/>
+  4. Calculate the difference between the two states and define it as the **action**. <br/>
+  <br/>  
+  This approach allows the generation of N<sup>2</sup> training data points from N original data points,<br/>
+  greatly increasing the diversity of the data available for critic training.<br/>
+  Ultimately, this has the same effect as data augmentation, leading to higher performance. <br/>
+  
+- Elite Sample Generation <br/>
+  The data stored in Replay memory is in the form of (state, FOM). Elite solution means is the data <br/>
+  that has the highest FOM among the data stored in Replay memory. <br/>
+  This Elite solution's state and Actor network to create a new optimum state. <br/>
+  The created state is added to the Replay memory.As you iterate through this process, <br/>
+  the Actor network will explore a narrower and narrower range of states the Actor network's scope, <br/>
+  which has the effect of quickly finding the global optimum state. <br/> 
+
+### Implementation
  This is the DNN OPT-based reinforcement learning algorithm we implemented. <br/>
  ![dnn_opt_fix](https://github.com/user-attachments/assets/8d824afb-faf8-47fe-a874-5bc934f7dbb7) <br/>
  <br/>
@@ -70,7 +95,7 @@ We can see that it trained well in terms of what we know about reinforcement lea
 ### Algorithm 2
 ![algorithm_2_result](https://github.com/user-attachments/assets/e950cda1-3c95-4bbe-81e0-937dcd7c6760) <br/>
 This graph shows the highest FOM values generated in the replay memory, depending on the step in the training process. <br/>
-Since our goal is to get the state with the highest FOM, we don't necessarily need to test it. <br/>
+**Since our goal is to get the state with the highest FOM, we don't necessarily need to test it.** <br/>
 ### Algorithm 3
 ![algoritm3_result](https://github.com/user-attachments/assets/7c852e40-0b9f-4e10-920a-a895681cfd6a) <br/>
 This graph shows the highest FOM values generated in the replay memory, depending on the step in the training process. <br/>
@@ -81,3 +106,4 @@ This graph shows the highest FOM values generated in the replay memory, dependin
 | 1 | 4000          | 8000           | -0.9516993      |
 | 2  | 750           | 1500           | -0.9495         |
 | 3 | 119 | 238          | -0.9498         |
+
