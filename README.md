@@ -29,7 +29,7 @@ $$ FOM = \frac{GAIN(dB)}{70(dB)} + \frac{\log_{10}(GBW)}{\log_{10}(1GHz)} - \fra
 *GBW: Gain Bandwidth*
 
 ## Environment setting 
-Normalization = (x - x<sub>min</sub>)/(x<sub>max</sub> - x<sub>min</sub>) <br/>
+$$Normalization = \frac{x - x_{min}}{x_{max} - x_{min}}$$ <br/>
 *x : Actual transistor width* <br/>
 Minimum transistor width : 180nm <br/>
 Maximum transistor width : 2250nm <br/>
