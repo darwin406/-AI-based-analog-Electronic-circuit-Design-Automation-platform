@@ -64,10 +64,17 @@ In Algorithm 2, Δwᵢ ∈ [-1,1] for all i ∈ {1, 2, 3, 4} <br/>
  
 ## Result
 ### Algorithm 1
-
+![algorithm1_result](https://github.com/user-attachments/assets/b803a8eb-7bf8-4fc3-aa88-d04e280ca245) <br/>
+This graph is for results tested after training is complete. <br/>
+We can see that it trained well in terms of what we know about reinforcement learning. <br/>
 ### Algorithm 2
-
+![algorithm_2_result](https://github.com/user-attachments/assets/e950cda1-3c95-4bbe-81e0-937dcd7c6760) <br/>
+This graph shows the highest FOM values generated in the replay memory, depending on the step in the training process. <br/>
+Since our goal is to get the state with the highest FOM, we don't necessarily need to test it. <br/>
 ### Algorithm 3
+![algoritm3_result](https://github.com/user-attachments/assets/7c852e40-0b9f-4e10-920a-a895681cfd6a) <br/>
+This graph shows the highest FOM values generated in the replay memory, depending on the step in the training process. <br/>
+
 ### Comparison by algorithm
 | Algorithm Number                                 | Number of trainings      | Number of simulations | Highest FOM reached |
 |-------------------------------------------|---------------|----------------|-----------------|
