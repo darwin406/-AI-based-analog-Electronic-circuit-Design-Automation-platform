@@ -18,6 +18,9 @@
  ![circuit_C](https://github.com/user-attachments/assets/696361a2-0978-416c-8579-64661d5dfd8a) <br/>
  In this circuit, W<sub>1</sub>,W<sub>2</sub>,W<sub>3</sub>,W<sub>4</sub> are optimized using reinforcement learning. <br/>
 
+## Simulator
+NgSpice
+
 ## FOM
 FOM was set and reinforcement learning was performed to maximize or minimize the FOM according to transistor sizes. <br/>
 In circuit C, the optimization is to maximize the FOM. <br/>
@@ -45,14 +48,29 @@ In Algorithm 2, Δwᵢ ∈ [-1,1] for all i ∈ {1, 2, 3, 4} <br/>
 ## Algorithm 1: DDPG (Action scale = 0.1)
  It is almost identical to the commonly known DDPG algorithm. However, it does not use a target network. <br/>
  This is the DDPG-based reinforcement learning algorithm we implemented. <br/>
- ![ddpg_algoritm](https://github.com/user-attachments/assets/e9cf110a-a866-43be-ada2-4d9ba8e21f04)
-
-## Algorithm 2: DNN_OPT (Action scale = 1)
+ ![ddpg_algoritm](https://github.com/user-attachments/assets/e9cf110a-a866-43be-ada2-4d9ba8e21f04) <br/>
+ For the neural network, we used MLP. <br/>
+## Algorithm 2: DDPG (Action scale = 1)
+ This algorithm uses target networks. <br/>
+ There are two target networks: Actor Target Network and Critic Target Network. <br/>
+## Algorithm 3: DNN_OPT (Action scale = 1)
  This is the DNN OPT-based reinforcement learning algorithm we implemented. <br/>
  ![dnn_opt_fix](https://github.com/user-attachments/assets/8d824afb-faf8-47fe-a874-5bc934f7dbb7) <br/>
  <br/>
  The formulas involved are as follows.<br/>
  ![ean1_fix](https://github.com/user-attachments/assets/d4f773bd-6637-4757-a1b9-afb8d61f19da) <br/>
- ![eqn_fix](https://github.com/user-attachments/assets/eacb5a33-8ee7-4fb1-a492-c5e17b043d30)
+ ![eqn_fix](https://github.com/user-attachments/assets/eacb5a33-8ee7-4fb1-a492-c5e17b043d30) <br/>
+ For the neural network, we used MLP. <br/>
  
- 
+## Result
+### Algorithm 1
+
+### Algorithm 2
+
+### Algorithm 3
+### Comparison by algorithm
+| Algorithm Number                                 | Number of trainings      | Number of simulations | Highest FOM reached |
+|-------------------------------------------|---------------|----------------|-----------------|
+| 1 | 4000          | 8000           | -0.9516993      |
+| 2  | 750           | 1500           | -0.9495         |
+| 3 | 119 | 238          | -0.9498         |
