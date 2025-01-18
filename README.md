@@ -45,16 +45,16 @@ Action space: **A** = (Δw₁, Δw₂, Δw₃, Δw₄) <br/>
 In Algorithm 1, Δwᵢ ∈ [-0.1,0.1] for all i ∈ {1, 2, 3, 4} <br/>
 In Algorithm 2, Δwᵢ ∈ [-1,1] for all i ∈ {1, 2, 3, 4} <br/>
 
-## Algorithm 1: DDPG (Action scale = 0.1)
+## Algorithm 1: DDPG (Action range = -0.1 ~ 0.1)
  It is almost identical to the commonly known DDPG algorithm. However, it does not use a target network. <br/>
  This is the DDPG-based reinforcement learning algorithm we implemented. <br/>
  ![ddpg_algoritm](https://github.com/user-attachments/assets/e9cf110a-a866-43be-ada2-4d9ba8e21f04) <br/>
  For the neural network, we used MLP. <br/>
-## Algorithm 2: DDPG (Action scale = 1)
+## Algorithm 2: DDPG (Action range = -1 ~ 1)
  This algorithm uses target networks. In this algorithm, the soft update process, <br/>
  a way to update target networks and their taget networks, was added from Algorithm 1. <br/>
  There are two target networks: Actor Target Network and Critic Target Network. <br/>
-## Algorithm 3: DNN_OPT (Action scale = 1)
+## Algorithm 3: DNN_OPT (Action range = -1 ~ 1)
 ### How DNN OPT RL works
 This algorithm utilizes pseudo-sampling and elite sample generation. <br/>
 - Pseudo Sampling <br/>
