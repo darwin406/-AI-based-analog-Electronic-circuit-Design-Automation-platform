@@ -51,7 +51,8 @@ In Algorithm 2, Δwᵢ ∈ [-1,1] for all i ∈ {1, 2, 3, 4} <br/>
  ![ddpg_algoritm](https://github.com/user-attachments/assets/e9cf110a-a866-43be-ada2-4d9ba8e21f04) <br/>
  For the neural network, we used MLP. <br/>
 ## Algorithm 2: DDPG (Action scale = 1)
- This algorithm uses target networks. <br/>
+ This algorithm uses target networks. In this algorithm, the soft update process, <br/>
+ a way to update target networks and their taget networks, was added from Algorithm 1. <br/>
  There are two target networks: Actor Target Network and Critic Target Network. <br/>
 ## Algorithm 3: DNN_OPT (Action scale = 1)
 ### How DNN OPT RL works
@@ -96,6 +97,7 @@ We can see that it trained well in terms of what we know about reinforcement lea
 ![algorithm_2_result](https://github.com/user-attachments/assets/e950cda1-3c95-4bbe-81e0-937dcd7c6760) <br/>
 This graph shows the highest FOM values generated in the replay memory, depending on the step in the training process. <br/>
 **Since our goal is to get the state with the highest FOM, we don't necessarily need to test it.** <br/>
+We simply watch the state stored in the replay memory and the FOM based on the state. <br/>
 ### Algorithm 3
 ![algoritm3_result](https://github.com/user-attachments/assets/7c852e40-0b9f-4e10-920a-a895681cfd6a) <br/>
 This graph shows the highest FOM values generated in the replay memory, depending on the step in the training process. <br/>
